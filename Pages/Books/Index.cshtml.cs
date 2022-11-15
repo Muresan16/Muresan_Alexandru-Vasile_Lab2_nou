@@ -27,6 +27,7 @@ namespace Muresan_Alexandru_Vasile_Lab2.Pages.Books
             {
                 Book = await _context.Book
                     .Include(b => b.Publisher)
+                    .Include(c => c.Author)
                     .ToListAsync();
             }
         }
