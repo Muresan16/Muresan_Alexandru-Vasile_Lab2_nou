@@ -49,6 +49,7 @@ namespace Muresan_Alexandru_Vasile_Lab2.Pages.Books
                         CategoryID = int.Parse(cat)
                     };
                     newBook.BookCategories.Add(catToAdd);
+                   
                 }
             }
 
@@ -62,6 +63,8 @@ namespace Muresan_Alexandru_Vasile_Lab2.Pages.Books
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }
+            PopulateAssignedCategoryData(_context, newBook);
+            return Page();
         }          
     }
 }
