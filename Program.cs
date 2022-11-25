@@ -10,10 +10,6 @@ builder.Services.AddDbContext<Muresan_Alexandru_Vasile_Lab2Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Muresan_Alexandru_Vasile_Lab2Context") ?? throw new InvalidOperationException("Connection string 'Muresan_Alexandru_Vasile_Lab2Context' not found.")));
 builder.Services.AddDbContext<LibraryIdentityContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Muresan_Alexandru_Vasile_Lab2Context") ?? throw new InvalidOperationException("Connection string 'Muresan_Alexandru_Vasile_Lab2Context' not found.")));
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
-    options.SignIn.RequireConfirmedAccount = true)
-        .AddEntityFrameworkStores<LibraryIdentityContext>();
-
 builder.Services.AddDefaultIdentity<IdentityUser>(options => 
     options.SignIn.RequireConfirmedAccount = true)
         .AddEntityFrameworkStores<LibraryIdentityContext>();
